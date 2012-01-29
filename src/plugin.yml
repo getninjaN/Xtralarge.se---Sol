@@ -1,9 +1,9 @@
 name: Sol
 main: se.xtralarge.sol.Sol
-version: 0.1
+version: 1.0
 author: getninjaN och granis
 depend: [Vault]
 commands:
    sol:
       description: Tar bort regn
-      usage: /sol
+      usage: /sol [reload]
