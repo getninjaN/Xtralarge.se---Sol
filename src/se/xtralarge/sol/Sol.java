@@ -43,24 +43,22 @@ public class Sol extends JavaPlugin {
 		Player player = null;
 		double balance = 0;
 		
-		if (sender instanceof Player) {
-			player = (Player) sender;
-		} else {
-			sender.sendMessage("Du måste vara en spelare.");
-			return true;
-		}
-		
-		if(player.hasPermission("granis.sol.reload")) {
-			if(args.length == 1) {
-				if(args[0].equalsIgnoreCase("reload")) {
+		if(cmd.getName().equalsIgnoreCase("sol")) {
+			if(sender.hasPermission("granis.sol.reload")) {
+				if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
 					configReload(sender);
-					
+						
 					return true;
 				}
 			}
-		}
-		
-		if(cmd.getName().equalsIgnoreCase("sol")) {
+			
+			if (sender instanceof Player) {
+				player = (Player) sender;
+			} else {
+				sender.sendMessage("Du måste vara en spelare.");
+				return true;
+			}
+			
 			if(player.hasPermission("granis.sol")) {
 				// Ekonomi grunks
 				if(economy != null) {
